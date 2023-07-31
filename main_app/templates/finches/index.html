@@ -1,0 +1,11 @@
+<nav>
+    <li><a href="/about">About</a></li>
+    <li><a href="/finches">Finches</a></li>
+</nav>
+
+<h1>Finch List</h1>
+
+{% for finch in finches %}
+    <strong><ul>{{finch.name}}</ul></strong>
+        <ul>{{finch.color}}</ul>
+{% endfor %}
