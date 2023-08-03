@@ -1,11 +1,16 @@
-<nav>
-    <li><a href="/about">About</a></li>
-    <li><a href="/finches">Finches</a></li>
-</nav>
+{% extends 'base.html' %}
+{% block content %}
 
 <h1>Finch List</h1>
 
 {% for finch in finches %}
-    <strong><ul>{{finch.name}}</ul></strong>
-        <ul>{{finch.color}}</ul>
+    <a href="{% url 'detail' finch.id %}">
+        <div class="card">
+            <div class="card-content">
+                <span class="card-title">{{finch.name}}</span>
+            </div>
+        </div>
+    </a>
 {% endfor %}
+
+{% endblock %}
